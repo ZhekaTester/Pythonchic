@@ -1,6 +1,6 @@
 import pytest
 
-from strimg_utils  import StringUtils
+from lesson_4.StringUtils import StringUtils
 
 # создаем экземпляр класса
 utils = StringUtils.StringUtils()
