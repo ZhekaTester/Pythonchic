@@ -13,7 +13,7 @@ def test_capitilize():
     assert  utils.capitilize("") == "" # пустая строка
     assert  utils.capitilize(" ") == " " # пробел
 
-@pytest.mark.skip
+@pytest.mark.skip ( "Починить тест")
 def test_trim():
     # позитив тест
     assert utils.trim("   skypro") == "skypro"
@@ -23,7 +23,7 @@ def test_trim():
     assert utils.trim(" ") == "" # только пробел
 
 
-@pytest.mark.skip
+@pytest.mark.skip ( "Починить тест")
 def test_to_list():
     # позитив тест
     assert utils.to_list("a,b,c") == ["a","b","c"]
