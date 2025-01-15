@@ -1,3 +1,4 @@
+import pytest
 
 from StringUtilities import StringUtils
 
@@ -13,7 +14,7 @@ def test_capitilize():
     assert  utils.capitilize("") == "" # пустая строка
     assert  utils.capitilize(" ") == " " # пробел
 
-@pytest.mark.skip ( "Починить тест")
+@pytest.mark.xfail(reason="Проблема с тестом")  # Или просто оставьте без усл
 def test_trim():
     # позитив тест
     assert utils.trim("   skypro") == "skypro"
@@ -23,7 +24,7 @@ def test_trim():
     assert utils.trim(" ") == "" # только пробел
 
 
-@pytest.mark.skip ( "Починить тест")
+@pytest.mark.xfail(reason="Проблема с тестом")  # Или просто оставьте без условия
 def test_to_list():
     # позитив тест
     assert utils.to_list("a,b,c") == ["a","b","c"]
