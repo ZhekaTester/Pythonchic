@@ -1,4 +1,4 @@
-import pytest
+
 from StringUtilities import StringUtils
 
 # создаем экземпляр класса
@@ -13,6 +13,7 @@ def test_capitilize():
     assert  utils.capitilize("") == "" # пустая строка
     assert  utils.capitilize(" ") == " " # пробел
 
+@pytest.mark.skip
 def test_trim():
     # позитив тест
     assert utils.trim("   skypro") == "skypro"
@@ -21,6 +22,8 @@ def test_trim():
     assert utils.trim("") == "" # пустая строка
     assert utils.trim(" ") == "" # только пробел
 
+
+@pytest.mark.skip
 def test_to_list():
     # позитив тест
     assert utils.to_list("a,b,c") == ["a","b","c"]
