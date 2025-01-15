@@ -53,6 +53,7 @@ def test_starts_with():
     # позитив тест
     assert utils.starts_with("SkyPro", "S") is True
 
+
     # негатив тест
     assert utils.starts_with("Skypro", "P") is False
     assert utils.starts_with("", "S")  is False
