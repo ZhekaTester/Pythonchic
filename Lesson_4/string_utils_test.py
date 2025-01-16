@@ -7,12 +7,12 @@ utils = StringUtils()
 
 def test_capitilize():
     # позитив тест
-    assert  utils.capitilize("skypro") == "Skypro"
-    assert  utils.capitilize("Skypro") == "Skypro"
+    assert utils.capitilize("skypro") == "Skypro"
+    assert utils.capitilize("Skypro") == "Skypro"
 
     # негатив тест
-    assert  utils.capitilize("") == "" # пустая строка
-    assert  utils.capitilize(" ") == " " # пробел
+    assert utils.capitilize("") == ""  # пустая строка
+    assert utils.capitilize(" ") == " "  # пробел
 
 @pytest.mark.xfail(reason="Проблема с тестом")  # Или просто оставьте без усл
 def test_trim():
@@ -20,11 +20,11 @@ def test_trim():
     assert utils.trim("   skypro") == "skypro"
     assert utils.trim("skypro   ") == "skypro"
     # негатив тест
-    assert utils.trim("") == "" # пустая строка
-    assert utils.trim(" ") == "" # только пробел
+    assert utils.trim("") == ""  # пустая строка
+    assert utils.trim(" ") == ""  # только пробел
 
 
-@pytest.mark.xfail(reason="Проблема с тестом")  # Или просто оставьте без условия
+@pytest.mark.xfail( reason="Проблема с тестом")  # Или просто оставьте без условия
 def test_to_list():
     # позитив тест
     assert utils.to_list("a,b,c") == ["a","b","c"]
