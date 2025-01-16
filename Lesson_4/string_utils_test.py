@@ -23,7 +23,6 @@ def test_trim():
     assert utils.trim("") == ""  # пустая строка
     assert utils.trim(" ") == ""  # только пробел
 
-
 @pytest.mark.xfail( reason="Проблема с тестом")  # Или просто оставьте без условия
 def test_to_list():
     # позитив тест
@@ -56,7 +55,6 @@ def test_delete_symbol():
 def test_starts_with():
     # позитив тест
     assert utils.starts_with("SkyPro", "S") is True
-
 
     # негатив тест
     assert utils.starts_with("Skypro", "P") is False
