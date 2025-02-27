@@ -8,3 +8,4 @@ driver.get("http://uitestingplayground.com/classattr")
 driver.find_element(By.CLASS_NAME, "btn-primary").click()
 
 sleep(5)
+driver.quit()

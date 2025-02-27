@@ -11,8 +11,6 @@ sleep(2)
 search_input.clear()
 sleep(2)
 search_input.send_keys(999)
-
-
-
+driver.quit()
 
 

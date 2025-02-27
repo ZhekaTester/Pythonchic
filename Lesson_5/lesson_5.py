@@ -13,8 +13,7 @@ for _ in range(5):
 print("Количество кликов:", click_count)
 
 sleep(5)
-
-
+driver.quit()
 
 
 

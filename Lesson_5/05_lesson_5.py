@@ -10,3 +10,6 @@ username.send_keys("tomsmith")
 password = driver.find_element(By.ID,"password")
 password.send_keys("SuperSecretPassword!")
 driver.find_element(By.CLASS_NAME, "radius").click()
+
+sleep(3)
+driver.quit()

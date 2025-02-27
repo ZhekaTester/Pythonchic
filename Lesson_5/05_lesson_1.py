@@ -8,3 +8,4 @@ driver.get("http://uitestingplayground.com/dynamicid")
 driver.find_element(By.CSS_SELECTOR, '[class="btn btn-primary"]').click()
 
 sleep(5)
+driver.quit()
