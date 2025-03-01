@@ -2,14 +2,17 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 
-driver = webdriver.Firefox()
-driver.get("http://the-internet.herokuapp.com/login")
+driver = webdriver.Chrome()
+driver.get("https://the-internet.herokuapp.com/add_remove_elements/")
 
-username = driver.find_element(By.ID,"username")
-username.send_keys("tomsmith")
-password = driver.find_element(By.ID,"password")
-password.send_keys("SuperSecretPassword!")
-driver.find_element(By.CLASS_NAME, "radius").click()
+click_count = 0
+for _ in range(5):
+    driver.find_element(
+        By.XPATH, "//button[contains(text(), 'Add Element')]"
+    ).click()
+    click_count += 1
 
-sleep(3)
+print("Количество кликов:", click_count)
+
+sleep(5)
 driver.quit()
