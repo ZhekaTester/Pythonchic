@@ -49,3 +49,4 @@ def test_shopping_flow(browser):
     total_amount = browser.find_element(By.CLASS_NAME, "summary_total_label").text
 
     assert total_amount == "Total: $58.29", f"Ожидаемая сумма: $58.29, Фактическая сумма: {total_amount}"
+
