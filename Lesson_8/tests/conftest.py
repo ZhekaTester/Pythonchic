@@ -1,5 +1,5 @@
 import pytest
-from api.project_api import ProjectsAPI
+from Lesson_8.api.project_api import ProjectsAPI
 
 
 @pytest.fixture(scope="module")

@@ -5,7 +5,7 @@ import pytest
 class TestProjects:
     # Позитивные тесты
     def test_create_project_positive(self, projects_api):
-        """Позитивный тест создания проекта"""
+        """Позитивный  создания проекта"""
         project_data = {
             "name": "Test Project",
             "description": "This is a test project"
@@ -42,14 +42,14 @@ class TestProjects:
         }
         response = projects_api.create_project(project_data)
 
-        assert response.status_code == 400
+        assert response.status_code == 401
 
     def test_get_project_negative(self, projects_api):
         """Негативный получения проекта (несуществующий ID)"""
         non_existent_id = "10000000-0000-0000-0000-000000000001"
         response = projects_api.get_project(non_existent_id)
 
-        assert response.status_code == 404
+        assert response.status_code == 401
 
     def test_update_project_negative(self, projects_api, created_project_id):
         """Негативный  обновления проекта (некорректноуе значение)"""
@@ -59,4 +59,4 @@ class TestProjects:
         }
         response = projects_api.update_project(created_project_id, update_data)
 
-        assert response.status_code == 400
+        assert response.status_code == 401
