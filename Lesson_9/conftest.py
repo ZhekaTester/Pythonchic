@@ -1,18 +1,15 @@
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from sqlalchemy import text  # Добавьте этот импорт
 from Lesson_9.models import Base
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
-DB_URL = 'postgresql://postgres:ztest@localhost:5432/mydatabase'
+DATABASE_URL = 'postgresql://postgres:ztest@localhost:5432/test_db'
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def engine():
-    engine = create_engine(DB_URL)
+    engine = create_engine(DATABASE_URL)
     Base.metadata.create_all(engine)
     yield engine
     Base.metadata.drop_all(engine)
