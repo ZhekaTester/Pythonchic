@@ -1,8 +1,7 @@
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import text  # Добавьте этот импорт
-from Lesson_9.models import Base
+from sqlalchemy import text
 
 DATABASE_URL = 'postgresql://postgres:ztest@localhost:5432/test_db'
 
@@ -27,3 +26,4 @@ def db_session(engine):
     session.close()
     transaction.rollback()
     connection.close()
+
