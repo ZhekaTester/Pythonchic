@@ -1,13 +1,17 @@
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from .models import Base, Student
 
-DB_URL = "postgresql://postgres:dryga@localhost:5432/mydatabase"
+from Lesson_9.models import Base
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+DB_URL = 'postgresql://postgres:ztest@localhost:5432/mydatabase'
 
 
-@pytest.fixture(scope="module")
-def db_engine():
+@pytest.fixture(scope='module')
+def engine():
     engine = create_engine(DB_URL)
     Base.metadata.create_all(engine)
     yield engine
@@ -15,10 +19,11 @@ def db_engine():
 
 
 @pytest.fixture
-def db_session(db_engine):
-    connection = db_engine.connect()
+def db_session(engine):
+    connection = engine.connect()
     transaction = connection.begin()
-    session = sessionmaker(bind=connection)()
+    Session = sessionmaker(bind=connection)
+    session = Session()
 
     yield session
 
