@@ -4,9 +4,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-"""Этот класс представляет страницу калькулятора"""
-
-
 class CalculatorPage:
     @allure.step("Открыть в браузере страницу калькулятора")
     def __init__(self, driver: str):

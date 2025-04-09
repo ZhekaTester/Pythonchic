@@ -2,9 +2,6 @@ import allure
 from selenium.webdriver.common.by import By
 
 
-"""Класс описывает страницу онлайн интернет-магазина"""
-
-
 class ShopPage:
     @allure.step("Открыть страницу интернет-магазина")
     def __init__(self, driver: str):
@@ -45,4 +42,3 @@ class ShopPage:
         total_element = self.driver.find_element(By.CLASS_NAME, "summary_total_label")
         return total_element.text
 
-    

@@ -5,9 +5,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-"""Класс описывает страницу проверки формы для заполнения"""
-
-
 class FormPage:
     @allure.step("Настроить драйвер")
     def __init__(self, driver: str):
@@ -36,4 +33,3 @@ class FormPage:
     def get_field_color(self, field_name: {}) -> WebElement:
         field = self.driver.find_element(By.CSS_SELECTOR, f"[id='{field_name}']")
         return field.value_of_css_property("background-color")
-    
