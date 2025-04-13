@@ -5,6 +5,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+"""Класс описывает страницу проверки формы для заполнения"""
+
+
 class FormPage:
     @allure.step("Настроить драйвер")
     def __init__(self, driver: str):
